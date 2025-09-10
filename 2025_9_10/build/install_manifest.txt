@@ -1,0 +1,11 @@
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/_setup_util.py
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/env.sh
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/setup.bash
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/local_setup.bash
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/setup.sh
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/local_setup.sh
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/setup.zsh
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/local_setup.zsh
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/setup.fish
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/local_setup.fish
+/home/flyx/Desktop/study_SLAM/2025_9_10/install/.rosinstall

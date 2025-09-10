@@ -1,0 +1,2 @@
+learning_topic
+-DCATKIN_DEVEL_PREFIX=/home/flyx/Desktop/study_SLAM/2025_9_10/devel -DCMAKE_INSTALL_PREFIX=/home/flyx/Desktop/study_SLAM/2025_9_10/install -G Unix Makefiles
