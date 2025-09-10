@@ -38,6 +38,7 @@
 /home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/install/strip.dir
 /home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/list_install_components.dir
 /home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/edit_cache.dir
+/home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/pose_subscriber.dir
 /home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/velocity_publisher.dir
 /home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/flyx/Desktop/study_SLAM/2025_9_10/build/learning_topic/CMakeFiles/rebuild_cache.dir

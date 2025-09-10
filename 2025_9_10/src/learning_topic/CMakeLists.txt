@@ -154,6 +154,8 @@ include_directories(
 
 add_executable(velocity_publisher src/velocity_publisher.cpp) # 编译
 target_link_libraries(velocity_publisher ${catkin_LIBRARIES}) # 将编译后的目标文件，链接到 catkin_libraries
+add_executable(pose_subscriber src/pose_subscriber.cpp) # 编译
+target_link_libraries(pose_subscriber ${catkin_LIBRARIES}) # 链接
 
 #############
 ## Install ##
