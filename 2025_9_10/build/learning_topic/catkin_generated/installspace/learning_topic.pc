@@ -1,8 +1,0 @@
-prefix=/home/flyx/Desktop/study_SLAM/2025_9_10/install
-
-Name: learning_topic
-Description: Description of learning_topic
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
