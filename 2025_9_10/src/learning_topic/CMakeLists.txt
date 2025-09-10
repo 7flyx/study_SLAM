@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   turtlesim
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -75,6 +76,11 @@ find_package(catkin REQUIRED COMPONENTS
 #   geometry_msgs#   std_msgs
 # )
 
+# 添加自己写的 Person.msg文件，用来系统编译
+add_message_files(FILES Person.msg)
+# 上述添加的待编译文件中，需要哪些依赖，比如 uint8等等，都是来自 std_msgs
+generate_messages(DEPENDENCIES std_msgs)
+
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
 ################################################
@@ -104,10 +110,17 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
+# catkin_package 主要用于被其他包依赖时
+#
+# catkin_package 的作用是生成 package 的配置文件，让其他包能找到你的头文件、库、依赖等。
+# 如果你的包没有被其他包依赖，或者没有写库（只写了节点），即使注释掉也能正常编译和运行。
+# 依赖已经在 find_package 里声明
+# 你在 find_package(catkin REQUIRED COMPONENTS ...) 里已经声明了依赖，编译器能找到相关头文件和库。
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES learning_topic
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim
+# 下一行是 编译时候的依赖
+   CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim message_runtime
 #  DEPENDS system_lib
 )
 
@@ -154,8 +167,21 @@ include_directories(
 
 add_executable(velocity_publisher src/velocity_publisher.cpp) # 编译
 target_link_libraries(velocity_publisher ${catkin_LIBRARIES}) # 将编译后的目标文件，链接到 catkin_libraries
+
 add_executable(pose_subscriber src/pose_subscriber.cpp) # 编译
 target_link_libraries(pose_subscriber ${catkin_LIBRARIES}) # 链接
+
+add_executable(person_publisher src/person_publisher.cpp) # 编译
+target_link_libraries(person_publisher ${catkin_LIBRARIES}) # 链接
+# 因为person_publisher中使用到了 自定义的消息类型 Person，所以需要添加  add_dependencies函数
+# ${PROJECT_NAME}_generate_messages_cpp 是 catkin 自动生成的目标，表示“生成本包所有 C++ 消息头文件”。
+# add_dependencies(person_subscriber ...) 告诉 CMake：
+# 只有在消息头文件生成后，才能编译 person_subscriber，否则会因为找不到头文件而编译失败。
+add_dependencies(person_publisher ${PROJECT_NAME}_generate_messages_cpp) 
+
+add_executable(person_subscriber src/person_subscriber.cpp) # 编译
+target_link_libraries(person_subscriber ${catkin_LIBRARIES}) # 链接
+add_dependencies(person_subscriber ${PROJECT_NAME}_generate_messages_cpp) 
 
 #############
 ## Install ##

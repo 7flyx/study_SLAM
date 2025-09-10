@@ -65,6 +65,11 @@
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>turtlesim</exec_depend>
 
+  <!-- 编译依赖 -->
+  <build_depend>message_generation</build_depend>
+
+  <!-- 运行时依赖 -->
+  <exec_depend>message_runtime</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
