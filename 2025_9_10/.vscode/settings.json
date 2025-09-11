@@ -1,0 +1,46 @@
+{
+    "files.associations": {
+        "*.txt": "markdown",
+        "notes/*.txt": "python",
+        "*.log": "log",
+        "bitset": "cpp",
+        "complex": "cpp",
+        "istream": "cpp",
+        "memory": "cpp",
+        "ranges": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "condition_variable": "cpp",
+        "random": "cpp",
+        "algorithm": "cpp",
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "utility": "cpp"
+    },
+
+    
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/${env:ROS_DISTRO}/lib/python2.7/dist-packages",
+        "${env:HOME}/catkin_ws/devel/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/${env:ROS_DISTRO}/lib/python2.7/dist-packages",
+        "${env:HOME}/catkin_ws/devel/lib/python2.7/dist-packages"
+    ],
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "ros.distro": "noetic",  // 根据实际ROS版本修改
+
+
+    "C_Cpp.includePath": [
+    "/opt/ros/${env:ROS_DISTRO}/include/**",
+    "${workspaceFolder}/devel/include/**"
+    ],
+    "C_Cpp.workspaceSymbols": "All",
+    "C_Cpp.navigation": "All",
+    "ros.includePaths": [
+    "${env:ROS_DISTRO}/include",
+    "devel/include"
+    ]
+
+
+}
